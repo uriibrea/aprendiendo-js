@@ -292,3 +292,26 @@ console.log(confirmacion);
 console.log(aviso); */
 
 //Expresiones Regulares
+
+let cadena =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quod corporis veritatis! Repellendus, vero. Consequatur praesentium molestias rem harum et. Cumque ab tenetur ducimus, sed rem nostrum expedita. Inventore, quidem.";
+
+let expReg = new RegExp("lorem", "ig");
+console.log(expReg.test(cadena));
+console.log(expReg.exec(cadena));
+
+let expReg2 = /lorem/gi;
+console.log(expReg2.test(cadena));
+console.log(expReg2.exec(cadena));
+
+let passwordExpReg = /^#(?!(\d)\1\1)\d{3}[a-zA-Z0-9]{3}([A-Z])\2\2$/;
+//Le estoy indicando que quiero que empiece con "#", luego tres números distintos, tres caracteres alfanuméricos intermedios y tres letras mayúsculas iguales al final.
+
+let password = "#123P3rUUU";
+console.log(passwordExpReg.test(password));
+
+let mailExpReg = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+//Esta expresión valida que tenga formato e-mail.
+
+let mail = "urielbreabj@gmail.com";
+console.log(mailExpReg.test(mail));
