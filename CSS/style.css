@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: raleway, sans-serif;
+  text-align: center;
+  background-color: #F0DB4F;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+h1 {
+  color: #323330;
+  font-size: 15vw;
+}
