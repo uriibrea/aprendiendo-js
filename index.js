@@ -315,3 +315,57 @@ let mailExpReg = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
 let mail = "urielbreabj@gmail.com";
 console.log(mailExpReg.test(mail));
+
+console.clear();
+
+//Funciones Anónimas Autoejecutables
+
+/* 
+//Estructura:
+
+(function () {
+~bloque de ejecución~
+})(); 
+
+Podemos entender esta estructura de la siguiente forma:
+
+Alert("Esto es una alerta")
+
+Que sería lo mismo que esto:
+
+(function () {
+~bloque de ejecución~
+})("Esto es una alerta")
+*/
+
+(function () {
+  console.log("Mi primer IIFE");
+})();
+
+(function (d, w, c) {
+  c.log("Mi segunda IIFE");
+  c.log(d);
+  c.log(w);
+})(document, window, console);
+
+//Formas de escribir las Funciones Anónimas Autoejecutables
+
+//Clásica
+(function () {
+  console.log("Versión Clásica");
+})();
+
+//La Crockford (JavaScript The Good Parts)
+(function () {
+  console.log("Versión Crockford");
+})();
+
+//Unaria
++(function () {
+  console.log("Versión Unaria");
+})();
+
+//Facebook
+!(function () {
+  console.log("Versión Facebook");
+})();
