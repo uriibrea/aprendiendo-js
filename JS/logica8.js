@@ -4,6 +4,8 @@
 
 //Ejercicio 24
 
+//Después de ver el video descubrí que el método sort() ordena de forma ascendente por defecto, por lo que no necesita parámetros.
+
 const ascendenteDescendente = () => {
   alert(
     "A continuación introduce 3 o más números y los ordenaremos de forma ascendente y descendente."
@@ -29,8 +31,8 @@ const ascendenteDescendente = () => {
 
   console.info({
     Original: numeros,
-    Ascendente: [...numeros].sort((a, b) => a - b),
-    Descendente: [...numeros].sort((a, b) => b - a),
+    Ascendente: [...numeros].sort(),
+    Descendente: [...numeros].sort().reverse(),
   });
 };
 
@@ -38,36 +40,38 @@ const ascendenteDescendente = () => {
 
 //Ejercicio 25
 
+//Quité la restricción de solo números.
+
 const eliminarDuplicados = () => {
   alert(
-    "A continuación introduce 3 o más números y eliminaremos los duplicados."
+    "A continuación introduce 3 o más elementos y eliminaremos los duplicados."
   );
 
-  const numeros = [];
+  const elementos = [];
 
   for (let i = 0; i < 3; i++) {
-    const numero = prompt("Introduce un número.");
+    const elemento = prompt("Introduce un elemento.");
 
-    if (!numero || isNaN(numero)) {
-      alert(`No has introducido un número.`);
+    if (!elemento) {
+      alert(`No has introducido un elemento.`);
       i--;
     } else {
-      numeros.push(parseFloat(numero));
+      elementos.push(parseFloat(elemento));
     }
 
     if (i === 2) {
-      const seguir = confirm("¿Quieres introducir otro número?");
+      const seguir = confirm("¿Quieres introducir otro elemento?");
       seguir === true ? (i = 1) : (i = 3);
     }
   }
 
-  const numerosSinDuplicados = numeros.filter((valor, indice, self) => {
+  const elementosSinDuplicados = elementos.filter((valor, indice, self) => {
     return self.indexOf(valor) === indice;
   });
 
   console.info({
-    numerosSinDuplicados,
-    originales: numeros,
+    elementosSinDuplicados,
+    originales: elementos,
   });
 };
 
@@ -102,7 +106,7 @@ const devolverPromedio = () => {
 
   const promedio = (numerosSumados / numeros.length).toFixed(2);
 
-  console.info(`El promedio de ${numeros} es ${promedio}.`);
+  console.info(`El promedio de ${numeros.join(" + ")} es ${promedio}.`);
 };
 
 /* devolverPromedio(); */
