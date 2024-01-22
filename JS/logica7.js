@@ -107,4 +107,79 @@ const ordenarParImpar = () => {
   });
 };
 
-ordenarParImpar();
+/* ordenarParImpar(); */
+
+//Ejercicios versión @JonMircha
+
+//Ejercicio 21
+
+const devolverCuadrados = (arr = undefined) => {
+  if (arr === undefined)
+    return console.warn(`No ingresaste un arreglo de números.`);
+
+  if (!(arr instanceof Array))
+    return console.error(`El valor ingresado no es un arreglo.`);
+
+  if (arr.length === 0) return console.error(`El arreglo está vacio.`);
+
+  for (const num of arr) {
+    if (typeof num !== "number")
+      return console.error(`El valor "${num}" ingresado, no es un número.`);
+  }
+
+  const newArr = arr.map((el) => el * el);
+
+  console.info(
+    `Arreglo original: ${arr}.\nArreglo elevado al cuadrado: ${newArr}.`
+  );
+};
+
+/* devolverCuadrados([9, 8, 7]); */
+
+//Ejercicio 22
+const arrayMinMax = (arr = undefined) => {
+  if (arr === undefined)
+    return console.warn(`No ingresaste un arreglo de números.`);
+
+  if (!(arr instanceof Array))
+    return console.error(`El valor ingresado no es un arreglo.`);
+
+  if (arr.length === 0) return console.error(`El arreglo está vacio.`);
+
+  for (const num of arr) {
+    if (typeof num !== "number")
+      return console.error(`El valor "${num}" ingresado, no es un número.`);
+  }
+
+  console.info(
+    `Arreglo original: ${arr}.\nValor mayor: ${Math.max(
+      ...arr
+    )}.\nValor menor: ${Math.min(...arr)}.`
+  );
+};
+
+/* arrayMinMax([84, 54, 321, 36]); */
+
+//Ejercicio 23
+
+const separarParesImpares = (arr = undefined) => {
+  if (arr === undefined)
+    return console.warn(`No ingresaste un arreglo de números.`);
+
+  if (!(arr instanceof Array))
+    return console.error(`El valor ingresado no es un arreglo.`);
+
+  if (arr.length === 0) return console.error(`El arreglo está vacio.`);
+
+  for (const num of arr) {
+    if (typeof num !== "number")
+      return console.error(`El valor "${num}" ingresado, no es un número.`);
+  }
+
+  console.info({
+    pares: arr.filter((num) => num % 2 === 0),
+    impares: arr.filter((num) => num % 2 !== 0),
+  });
+};
+
+separarParesImpares([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
