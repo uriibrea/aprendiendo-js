@@ -6,6 +6,8 @@
 
 //Después de ver el video descubrí que el método sort() ordena de forma ascendente por defecto, por lo que no necesita parámetros.
 
+//Edit: Esto es falso, realmente lo que hace es realizar una comparación lexicográfica, similar a ordenar palabras alfabéticamente.
+
 const ascendenteDescendente = () => {
   alert(
     "A continuación introduce 3 o más números y los ordenaremos de forma ascendente y descendente."
@@ -31,12 +33,12 @@ const ascendenteDescendente = () => {
 
   console.info({
     Original: numeros,
-    Ascendente: [...numeros].sort(),
-    Descendente: [...numeros].sort().reverse(),
+    Ascendente: [...numeros].sort((a, b) => a - b),
+    Descendente: [...numeros].sort((a, b) => b - a),
   });
 };
 
-/* ascendenteDescendente(); */
+ascendenteDescendente();
 
 //Ejercicio 25
 
